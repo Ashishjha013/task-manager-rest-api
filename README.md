@@ -35,17 +35,24 @@
 
 ## 📸 Screenshots
 
-### 🔐 Login (Access Token + Refresh Cookie)
-> Replace this after uploading **assets/login.png**
-```
-![Login Screenshot](assets/login.png)
-```
+## 🔐 Login
+![Login Screenshot](assets/screenshots/1-login.png)
 
-### 📊 Tasks (Redis Cached Response)
-> Replace this after uploading **assets/tasks_cached.png**
-```
-![Tasks Cached Screenshot](assets/tasks_cached.png)
-```
+## 📊 Tasks Cached
+![Tasks Cached](assets/screenshots/2-task-list-cached.png)
+
+## 👤 Profile
+![Profile Screenshot](assets/screenshots/3-profile.png)
+
+## 📝 Create Task
+![Create Task Screenshot](assets/screenshots/4-create-task.png)
+
+## 📈 Stats
+![Stats Screenshot](assets/screenshots/5-stats.png)
+
+## 🖼 Avatar Upload
+![Avatar Upload Screenshot](assets/screenshots/6-avatar-upload.png)
+
 
 ---
 
@@ -222,6 +229,7 @@ Feel free to fork and open PRs. Add clear unit/integration tests for controllers
 ---
 
 *Generated for: Ashish Jha — Task Manager*
+
 
 
 
