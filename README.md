@@ -1,9 +1,12 @@
-```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                            ##🚀 TASK MANAGER API                             ║
-║               Production-grade backend engineered for scale.                 ║
-╚══════════════════════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+
+# 🚀 **TASK MANAGER API**
+
+### **Production-grade backend engineered for real-world scale**
+
+✨━━━━━━━━━━━━━━━━━━━  **❖**  ━━━━━━━━━━━━━━━━━━━✨
+
+</div>
 
 ---
 
@@ -219,6 +222,7 @@ Feel free to fork and open PRs. Add clear unit/integration tests for controllers
 ---
 
 *Generated for: Ashish Jha — Task Manager*
+
 
 
 
