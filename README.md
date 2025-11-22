@@ -28,8 +28,8 @@
 
 ## 🌐 Live Demo
 
-##🔗 **Live URL:** https://task-manager-6bu9.onrender.com  
-##📁 **GitHub Repo:** https://github.com/Ashishjha013/Task-Manager
+🔗 **Live URL:** https://task-manager-6bu9.onrender.com  
+📁 **GitHub Repo:** https://github.com/Ashishjha013/Task-Manager
 
 ---
 
@@ -229,6 +229,7 @@ Feel free to fork and open PRs. Add clear unit/integration tests for controllers
 ---
 
 *Generated for: Ashish Jha — Task Manager*
+
 
 
 
