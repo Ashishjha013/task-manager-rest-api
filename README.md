@@ -54,7 +54,7 @@
 
 ## 🌐 **Live Demo**
 🔗 **API URL:** https://task-manager-6bu9.onrender.com  
-📁 **GitHub Repo:** https://github.com/Ashishjha013/task-manager-api
+📁 **GitHub Repo:** [https://github.com/Ashishjha013/task-manager-api](https://github.com/Ashishjha013/task-manager-rest-api)
 
 ---
 
@@ -306,6 +306,7 @@ Feel free to fork and open PRs. Add clear unit/integration tests for controllers
 ---
 
 *Generated for: Ashish Jha — Task Manager*
+
 
 
 
