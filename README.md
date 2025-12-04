@@ -297,12 +297,6 @@ npm run dev
 - 💼 LinkedIn: [Ashish Jha](https://www.linkedin.com/in/ashishjha13/)
 - 📧 Email: [ashishjha1304@gmail.com](mailto:ashishjha1304@gmail.com)
 
----
-
-## ✍️ Contribution & License
-
-Feel free to fork and open PRs. Add clear unit/integration tests for controllers.
-
----
 
 *Generated for: Ashish Jha — Task Manager*
+
