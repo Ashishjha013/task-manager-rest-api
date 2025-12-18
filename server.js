@@ -84,9 +84,7 @@ const userRoutes = require('./routes/userRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 
 app.get('/', (req, res) => {
-  res.json({
-    message: 'API is running smoothly 🚀',
-  });
+  res.send('🚀 TASK MANAGER API deployed and running successfully!');
 });
 
 // User Routes
