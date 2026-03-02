@@ -1,93 +1,177 @@
 <div align="center">
 
 # 🚀 **TASK MANAGER API**
-
-### **Production-grade backend engineered for real-world scale**
+### **Production-grade backend engineered for real-world scalability**
 
 ✨━━━━━━━━━━━━━━━━━━━  **❖**  ━━━━━━━━━━━━━━━━━━━✨
-
 </div>
 
 ---
 
-## 🧰 Tech Stack
+## ⚡ **Quick Features Summary**
 
-![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-5-black?logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-Caching-red?logo=redis&logoColor=white)
-![JWT](https://img.shields.io/badge/Auth-JWT-orange?logo=jsonwebtokens&logoColor=white)
-![Cloudinary](https://img.shields.io/badge/Cloud-Cloudinary-lightblue?logo=cloudinary&logoColor=white)
-![Multer](https://img.shields.io/badge/Uploads-Multer-yellow?logo=multer&logoColor=black)
-![Render](https://img.shields.io/badge/Deployed%20On-Render-purple?logo=render&logoColor=white)
-![Winston](https://img.shields.io/badge/Logging-Winston-blue?logo=winston&logoColor=white)
-![Morgan](https://img.shields.io/badge/HTTP%20Logs-Morgan-green?logo=npm&logoColor=white)
-![Security](https://img.shields.io/badge/Security-Helmet%20%7C%20XSS%20%7C%20Sanitize-critical?logo=apache&logoColor=white)
+✔ JWT Auth (Access + Refresh Tokens)  
+✔ Admin + User Roles  
+✔ Task CRUD with Pagination & Filters  
+✔ Aggregation-based Task Stats  
+✔ Redis Caching (Tasks + Stats)  
+✔ Cloudinary Avatar Uploads  
+✔ Production Security Middleware  
+✔ Winston Logging + Central Error Handler  
+✔ Clean Controller-Service Architecture  
 
 ---
 
-## 🌐 Live Demo
+## 🧰 **Tech Stack**
 
-🔗 **Live URL:** https://task-manager-6bu9.onrender.com  
-📁 **GitHub Repo:** https://github.com/Ashishjha013/Task-Manager
-
----
-
-## 📸 Screenshots
-
-### 🔐 Login (Access Token + Refresh Cookie)
-> Replace this after uploading **assets/login.png**
-```
-![Login Screenshot](assets/login.png)
-```
-
-### 📊 Tasks (Redis Cached Response)
-> Replace this after uploading **assets/tasks_cached.png**
-```
-![Tasks Cached Screenshot](assets/tasks_cached.png)
-```
+![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
+![Express.js](https://img.shields.io/badge/Express.js-5-black?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)
+![Redis](https://img.shields.io/badge/Redis-Caching-red?logo=redis)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange?logo=jsonwebtokens)
+![Cloudinary](https://img.shields.io/badge/Cloud-Cloudinary-blue?logo=cloudinary)
+![Multer](https://img.shields.io/badge/Uploads-Multer-yellow)
+![Winston](https://img.shields.io/badge/Logging-Winston-blue)
+![Morgan](https://img.shields.io/badge/HTTP%20Logs-Morgan-green)
+![Security](https://img.shields.io/badge/Security-Helmet%20%7C%20XSS%20%7C%20Sanitize-critical)
+![Render](https://img.shields.io/badge/Deployed%20On-Render-purple)
 
 ---
 
-## 🔥 Highlights
+## 🎯 **Tech Highlights (Why This Backend is Production-Ready)**
+
+- **JWT Access + Refresh token architecture** with httpOnly cookies  
+- **DB-stored refresh tokens** enabling session revocation  
+- **Redis caching layer** for high-performance task retrieval  
+- **Cloudinary `upload_stream`** for optimized avatar upload  
+- **MongoDB Aggregation** for task analytics  
+- **Winston logger + Morgan logs** for observability  
+- **Rate limit, sanitize, XSS, helmet** for enterprise security  
+- **Virtual populate** linking Users ↔ Tasks  
+- **Clean modular folder structure** (scalable engineering pattern)
+
+---
+
+## 🌐 **Live Demo**
+🔗 **API URL:** https://task-manager-6bu9.onrender.com  
+📁 **GitHub Repo:** [https://github.com/Ashishjha013/task-manager-api](https://github.com/Ashishjha013/task-manager-rest-api)
+
+---
+
+## 📸 **Screenshots**
+
+### 🔐 Login
+![Login Screenshot](assets/screenshots/1-login.png)
+
+### 📝 Tasks Cached
+![Tasks Cached](assets/screenshots/2-task-list-cached.png)
+
+### 👤 Profile
+![Profile Screenshot](assets/screenshots/3-profile.png)
+
+### 📝 Create Task
+![Create Task Screenshot](assets/screenshots/4-create-task.png)
+
+### 📊 Stats
+![Stats Screenshot](assets/screenshots/5-stats.png)
+
+### 🖼 Avatar Upload
+![Avatar Upload Screenshot](assets/screenshots/6-avatar-upload.png)
+
+---
+
+## 🔥 **Features (Detailed)**
 
 ### 🔐 Authentication & Authorization
-- Short-lived **Access Tokens**
-- Long-lived **Refresh Tokens** (httpOnly cookies)
-- Stored refresh tokens in DB (session pattern)
-- Admin + User role-based authorization
-- Full secure lifecycle: register → login → refresh → logout
+- Register / Login / Logout  
+- Access + Refresh token lifecycle  
+- Refresh tokens stored in DB for session revocation  
+- Role-based access  
+- Secure httpOnly cookies  
+
+---
 
 ### 📝 Task Management
-- CRUD  
-- Filtering, sorting, pagination  
-- Full-text search  
-- Aggregation analytics (`/stats`)  
-- Owner/admin access control  
-- Virtual populate (User ↔ Task)
+- CRUD operations  
+- Search, filter, sort  
+- Pagination  
+- Stats endpoint using MongoDB aggregation  
+- Owner-based access control  
+- Admin access to all tasks  
 
-### ⚡ Performance With Redis
-- Cached listing and stats  
-- User-scoped and filter-scoped keys  
-- Automatic invalidation on create/update/delete  
-- Config-driven TTL
+---
+
+### ⚡ Redis Caching
+- Cache heavy `GET /tasks` API  
+- Cache stats endpoint  
+- Auto invalidation on task create/update/delete  
+- Query-aware cache keys  
+
+---
 
 ### ☁️ Cloud Features
-- Avatar uploads using Multer + Cloudinary  
-- Cloud-stored URLs only  
-- Clean delete pipeline  
+- Multer (memoryStorage)  
+- Cloudinary upload_stream for avatars  
+- Auto delete old images  
+
+---
 
 ### 🛡 Security
-- Helmet, CORS, HPP  
-- xss-clean  
+- Helmet  
+- Rate limiting  
+- CORS  
 - express-mongo-sanitize  
-- Strict cookies  
-- Rate limiting
+- xss-clean  
+- HttpOnly secure cookies  
+
+---
 
 ### 📊 Observability
-- Winston structured logger  
+- Winston structured logs  
 - Morgan request logs  
-- Central error handler with consistent JSON  
+- Central error handler  
+- Async handler wrapper  
+
+---
+
+## 🧱 **API Endpoints**
+
+### Auth
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/users/register` |
+| POST | `/api/users/login` |
+| POST | `/api/users/refresh` |
+| POST | `/api/users/logout` |
+| GET | `/api/users/profile` |
+| POST | `/api/users/avatar` |
+| DELETE | `/api/users/avatar` |
+
+### Tasks
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/tasks` |
+| GET | `/api/tasks` |
+| GET | `/api/tasks/stats` |
+| GET | `/api/tasks/:id` |
+| PUT | `/api/tasks/:id` |
+| DELETE | `/api/tasks/:id` |
+
+---
+
+## 🧪 **Sample API Response**
+
+```json
+{
+  "task": {
+    "title": "Complete Backend Project",
+    "description": "Finish API endpoints and caching",
+    "priority": "High",
+    "status": "Pending",
+    "owner": "674d1fbe9c8f123abc45ef90"
+  }
+}
+
 
 ---
 
@@ -203,29 +287,13 @@ npm run dev
 
 ## ✨ Author
 **Ashish Kumar Jha**  
-📍 India | 💻 Aspiring Software Engineer
+📍 India | 💻 Backend Engineer
 
 ---
 
 ## 📬 Connect with Me
 
 - 🔗 GitHub: [Ashishjha013](https://github.com/Ashishjha013)
+- 
 - 💼 LinkedIn: [Ashish Jha](https://www.linkedin.com/in/ashishjha13/)
 - 📧 Email: [ashishjha1304@gmail.com](mailto:ashishjha1304@gmail.com)
-
----
-
-## ✍️ Contribution & License
-
-Feel free to fork and open PRs. Add clear unit/integration tests for controllers.
-
----
-
-*Generated for: Ashish Jha — Task Manager*
-
-
-
-
-
-
-
