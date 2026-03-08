@@ -9,22 +9,24 @@ const notFound = (req, res, next) => {
 const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 
-  //Log error
-  logger.error({
-    message: err.message,
-    statusCode,
-    stack: err.stack,
-    path: req.originalUrl,
-    method: req.method,
-    body: req.body,
-    query: req.query,
-  });
+  const isFavicon404 = statusCode === 404 && req.originalUrl === '/favicon.ico';
+
+  if (!isFavicon404) {
+    logger.error({
+      message: err.message,
+      statusCode,
+      path: req.originalUrl,
+      method: req.method,
+      body: req.body,
+      query: req.query,
+      stack: statusCode >= 500 ? err.stack : undefined,
+    });
+  }
 
   res.status(statusCode);
   res.json({
     message: err.message,
-    // In production, don't send stack trace to client
-    stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+    stack: process.env.NODE_ENV === 'production' || statusCode < 500 ? null : err.stack,
   });
 };
 

@@ -1,22 +1,39 @@
 const redis = require('redis');
-const { log } = require('winston');
 
-const client = redis.createClient({
-  url: process.env.REDIS_URL || 'redis://localhost:6379',
-});
-
-client.on('error', (err) => {
-  console.error('Redis Client Error', err);
-});
+let client;
 
 const connectRedis = async () => {
-  if (!client.isOpen) {
+  const redisUrl = process.env.REDIS_URL;
+
+  if (!redisUrl) {
+    console.warn('REDIS_URL is not set. Running without Redis cache.');
+    return null;
+  }
+
+  try {
+    client = redis.createClient({
+      url: redisUrl,
+      socket: {
+        reconnectStrategy: () => false,
+      },
+    });
+
+    client.on('error', (err) => {
+      console.error('Redis Client Error:', err.message);
+    });
+
     await client.connect();
     console.log('Redis connected successfully');
+    return client;
+  } catch (error) {
+    console.error('Redis connection failed:', error.message);
+    client = null;
+    return null;
   }
 };
 
 module.exports = {
-  client,
   connectRedis,
+  getRedisClient: () => client,
 };
+
