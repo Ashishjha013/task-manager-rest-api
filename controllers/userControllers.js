@@ -5,6 +5,8 @@ const { generateAccessToken, generateRefreshToken } = require('../utils/token');
 const jwt = require('jsonwebtoken');
 const cloudinary = require('../config/cloudinary');
 
+const AVATAR_FOLDER = process.env.CLOUDINARY_AVATAR_FOLDER || 'task-manager-avatars';
+
 // Upload avatar for logged-in user
 exports.uploadAvatar = asyncHandler(async (req, res) => {
   if (!req.file) {
@@ -23,31 +25,32 @@ exports.uploadAvatar = asyncHandler(async (req, res) => {
   }
 
   // Upload new file (buffer) to Cloudinary
-  const result = await cloudinary.uploader.upload_stream(
-    {
-      folder: 'avatars',
-      resource_type: 'image',
-    },
-    async (error, uploaded) => {
-      if (error) {
-        throw new Error('Cloudinary upload failed');
-      }
+  const uploaded = await new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        folder: AVATAR_FOLDER,
+        resource_type: 'image',
+      },
+      (error, result) => {
+        if (error) return reject(error);
+        return resolve(result);
+      },
+    );
 
-      req.user.avatar = {
-        url: uploaded.secure_url,
-        publicId: uploaded.public_id,
-      };
+    stream.end(req.file.buffer);
+  });
 
-      await req.user.save();
+  req.user.avatar = {
+    url: uploaded.secure_url,
+    publicId: uploaded.public_id,
+  };
 
-      res.json({
-        message: 'Avatar uploaded successfully',
-        avatar: req.user.avatar,
-      });
-    }
-  );
-  // Pipe buffer to Cloudinary stream
-  result.end(req.file.buffer);
+  await req.user.save();
+
+  res.json({
+    message: 'Avatar uploaded successfully',
+    avatar: req.user.avatar,
+  });
 });
 
 // Delete avatar for logged-in user
@@ -223,3 +226,4 @@ exports.logoutUser = asyncHandler(async (req, res) => {
     });
   }
 });
+
