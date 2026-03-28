@@ -1,14 +1,14 @@
 <div align="center">
 
-# 🚀 **TASK MANAGER API**
-### **Production-grade backend engineered for real-world scalability**
+# 🚀 TASK MANAGER API
+### Production-grade backend engineered for real-world scalability
 
-✨━━━━━━━━━━━━━━━━━━━  **❖**  ━━━━━━━━━━━━━━━━━━━✨
+✨━━━━━━━━━━━━━━━━━━━  ❖  ━━━━━━━━━━━━━━━━━━━✨
 </div>
 
 ---
 
-## ⚡ **Quick Features Summary**
+## ⚡ Quick Features Summary
 
 ✔ JWT Auth (Access + Refresh Tokens)  
 ✔ Admin + User Roles  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🧰 **Tech Stack**
+## 🧰 Tech Stack
 
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
 ![Express.js](https://img.shields.io/badge/Express.js-5-black?logo=express)
@@ -38,27 +38,28 @@
 
 ---
 
-## 🎯 **Tech Highlights (Why This Backend is Production-Ready)**
+## 🎯 Tech Highlights (Why This Backend is Production-Ready)
 
-- **JWT Access + Refresh token architecture** with httpOnly cookies  
-- **DB-stored refresh tokens** enabling session revocation  
-- **Redis caching layer** for high-performance task retrieval  
-- **Cloudinary `upload_stream`** for optimized avatar upload  
-- **MongoDB Aggregation** for task analytics  
-- **Winston logger + Morgan logs** for observability  
-- **Rate limit, sanitize, XSS, helmet** for enterprise security  
-- **Virtual populate** linking Users ↔ Tasks  
-- **Clean modular folder structure** (scalable engineering pattern)
-
----
-
-## 🌐 **Live Demo**
-🔗 **API URL:** https://task-manager-6bu9.onrender.com  
-📁 **GitHub Repo:** [https://github.com/Ashishjha013/task-manager-api](https://github.com/Ashishjha013/task-manager-rest-api)
+- JWT Access + Refresh token architecture with httpOnly cookies  
+- DB-stored refresh tokens enabling session revocation  
+- Redis caching layer for high-performance task retrieval  
+- Cloudinary `upload_stream` for optimized avatar upload  
+- MongoDB Aggregation for task analytics  
+- Winston logger + Morgan logs for observability  
+- Rate limiting, sanitize, XSS, helmet for enterprise security  
+- Virtual populate linking Users ↔ Tasks  
+- Clean modular folder structure (scalable engineering pattern)  
 
 ---
 
-## 📸 **Screenshots**
+## 🌐 Live Demo
+
+🔗 API URL: https://task-manager-6bu9.onrender.com  
+📁 GitHub Repo: https://github.com/Ashishjha013/task-manager-rest-api  
+
+---
+
+## 📸 Screenshots
 
 ### 🔐 Login
 ![Login Screenshot](assets/screenshots/1-login.png)
@@ -80,7 +81,7 @@
 
 ---
 
-## 🔥 **Features (Detailed)**
+## 🔥 Features (Detailed)
 
 ### 🔐 Authentication & Authorization
 - Register / Login / Logout  
@@ -134,34 +135,33 @@
 
 ---
 
-## 🧱 **API Endpoints**
+## 🧱 API Endpoints
 
 ### Auth
 | Method | Endpoint |
 |--------|----------|
-| POST | `/api/users/register` |
-| POST | `/api/users/login` |
-| POST | `/api/users/refresh` |
-| POST | `/api/users/logout` |
-| GET | `/api/users/profile` |
-| POST | `/api/users/avatar` |
-| DELETE | `/api/users/avatar` |
+| POST | /api/users/register |
+| POST | /api/users/login |
+| POST | /api/users/refresh |
+| POST | /api/users/logout |
+| GET | /api/users/profile |
+| POST | /api/users/avatar |
+| DELETE | /api/users/avatar |
 
 ### Tasks
 | Method | Endpoint |
 |--------|----------|
-| POST | `/api/tasks` |
-| GET | `/api/tasks` |
-| GET | `/api/tasks/stats` |
-| GET | `/api/tasks/:id` |
-| PUT | `/api/tasks/:id` |
-| DELETE | `/api/tasks/:id` |
+| POST | /api/tasks |
+| GET | /api/tasks |
+| GET | /api/tasks/stats |
+| GET | /api/tasks/:id |
+| PUT | /api/tasks/:id |
+| DELETE | /api/tasks/:id |
 
 ---
 
-## 🧪 **Sample API Response**
+## 🧪 Sample API Response
 
-```json
 {
   "task": {
     "title": "Complete Backend Project",
@@ -174,7 +174,8 @@
 
 ---
 
-```
+## 🏗 Architecture
+
 [Client]
    |
    v
@@ -189,50 +190,19 @@ HTTPS
    └── Cloudinary
         |
    Winston + Morgan Logs
-```
-
----
-
-## 📡 Core Endpoints
-
-### Auth
-- POST `/api/users/register`
-- POST `/api/users/login`
-- POST `/api/users/refresh`
-- POST `/api/users/logout`
-- GET `/api/users/profile`
-- GET `/api/users/admin`
-
-### Tasks
-- POST `/api/tasks`
-- GET `/api/tasks`
-- GET `/api/tasks/stats`
-- GET `/api/tasks/:id`
-- PUT `/api/tasks/:id`
-- DELETE `/api/tasks/:id`
-
-### Avatar
-- POST `/api/users/avatar`
-- DELETE `/api/users/avatar`
 
 ---
 
 ## ⚡ Quick Start (Local)
 
 ### 1️⃣ Clone
-```bash
-git clone https://github.com/Ashishjha013/Task-Manager.git
-cd Task-Manager
-```
+git clone https://github.com/Ashishjha013/task-manager-rest-api.git
 
 ### 2️⃣ Install
-```bash
 npm install
-```
 
 ### 3️⃣ Environment Variables
 
-```
 PORT=8080
 NODE_ENV=development
 
@@ -250,12 +220,9 @@ REDIS_URL=your_redis_url
 REDIS_TTL_SECONDS=300
 
 FRONTEND_URL=http://localhost:3000
-```
 
 ### 4️⃣ Run
-```bash
 npm run dev
-```
 
 ---
 
@@ -263,10 +230,10 @@ npm run dev
 
 1. Register  
 2. Login  
-3. Hit `/profile`  
+3. Hit /profile  
 4. Create task  
-5. List tasks → validate **cached**: true  
-6. Hit `/stats`  
+5. List tasks → validate cached  
+6. Hit /stats  
 7. Upload avatar  
 
 ---
@@ -277,22 +244,22 @@ npm run dev
 - Refresh tokens allow session renewal without relogin  
 - DB-stored refresh tokens allow revocation  
 - Redis reduces DB load and improves response latency  
-- Cloudinary avoids binary storage in your DB  
+- Cloudinary avoids binary storage in DB  
 - Compound Mongo indexes improve query performance  
 - Centralized error handler guarantees consistent DX  
 
 ---
 
 ## ✨ Author
-**Ashish Kumar Jha**  
-📍 India | 💻 Backend Engineer
+
+Ashish Kumar Jha  
+India | Backend Engineer  
 
 ---
 
 ## 📬 Connect with Me
 
-- 🔗 GitHub: [Ashishjha013](https://github.com/Ashishjha013)
-- 
-- 💼 LinkedIn: [Ashish Jha](https://www.linkedin.com/in/ashishjha13/)
-- 📧 Email: [ashishjha1304@gmail.com](mailto:ashishjha1304@gmail.com)
+- GitHub: https://github.com/Ashishjha013  
+- LinkedIn: https://www.linkedin.com/in/ashishjha13/  
+- Email: ashishjha1304@gmail.com
 
